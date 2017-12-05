@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_f2"
+    android:id="@+id/feedback_layout"
+    android:orientation="vertical"
+    tools:context=".Activity.FeedBackActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        android:fillViewport="true">
+
+        <EditText
+            android:id="@+id/feedback_content"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:background="@color/white"
+            android:gravity="left|top"
+            android:hint="@string/feedback_hint_tips"
+            android:maxLength="500"
+            android:padding="16dp"
+            android:textColorHint="@color/gray_b"
+            android:textSize="13sp" />
+    </ScrollView>
+
+    <EditText
+        android:id="@+id/feedback_phones_et"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/white"
+        android:hint="@string/feedback_phone_hint_tips"
+        android:maxLength="20"
+        android:paddingLeft="16dp"
+        android:textColorHint="@color/gray_b"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/feedback_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_empty_content_gray_with_radius"
+        android:gravity="center"
+        android:text="@string/send"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!--<com.handarui.obtain.weight.PlayingStateLayout-->
+
+    <!--android:id="@+id/main_playLayout"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp" />-->
+</LinearLayout>

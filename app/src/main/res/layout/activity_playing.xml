@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/back_layout"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/back_Img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:src="@mipmap/ic_play_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/play"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/play_list_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:src="@mipmap/ic_play_playlsit" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_menu_layout"
+        android:layout_below="@+id/back_layout"
+        android:descendantFocusability="blocksDescendants"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/course_Img_layout"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="4dp"
+                app:cardElevation="10dp">
+
+                <ImageView
+                    android:id="@+id/course_Img"
+                    android:layout_width="250dp"
+                    android:layout_height="250dp"
+                    />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/lesson_name_Tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/course_Img_layout"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:id="@+id/play_control_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lesson_name_Tv"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical"
+                android:paddingBottom="33dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/previous"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="40dp"
+                        android:background="@drawable/select_white_gray"
+                        android:padding="8dp"
+                        android:src="@mipmap/ic_play_last" />
+
+                    <ImageView
+                        android:id="@+id/play"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:background="@drawable/select_white_gray"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_play_normal" />
+
+                    <ImageView
+                        android:id="@+id/next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:background="@drawable/select_white_gray"
+                        android:padding="8dp"
+                        android:src="@mipmap/ic_play_next" />
+
+                </LinearLayout>
+
+                <SeekBar
+                    android:id="@+id/seekBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="12dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/playingTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:textColor="#DE000000"
+                        android:textSize="10sp"
+                        tools:text="11:11" />
+
+                    <TextView
+                        android:id="@+id/totalTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:textColor="#DE000000"
+                        android:textSize="10sp"
+                        tools:text="11:11" />
+                </RelativeLayout>
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_menu_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/openCourse"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_white_gray"
+            android:drawablePadding="8dp"
+            android:drawableTop="@mipmap/ic_play_menu_course"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="@string/course"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/openBrief"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_white_gray"
+            android:drawablePadding="8dp"
+            android:drawableTop="@mipmap/ic_play_menu_transcript"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="@string/transcript"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/download_Img"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_white_gray"
+            android:drawablePadding="8dp"
+            android:drawableTop="@mipmap/ic_play_menu_download"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="@string/download"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/share"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/select_white_gray"
+            android:drawablePadding="8dp"
+            android:drawableTop="@mipmap/ic_play_menu_share"
+            android:gravity="center"
+            android:paddingBottom="8dp"
+            android:paddingTop="8dp"
+            android:text="@string/share"
+            android:textSize="10sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>

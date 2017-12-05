@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.handarui.acquire.server.api.bean.CourseBean" />
+
+        <variable
+            name="courseBean"
+            type="CourseBean" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/recommend_album_layout"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:background="@drawable/select_white_gray"
+        android:orientation="vertical">
+        <!-- 推荐位的布局 -->
+
+        <ImageView
+            android:id="@+id/course_Img"
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_margin="16dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/course_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/course_Img"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{courseBean.name}"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            tools:text="标题" />
+
+        <TextView
+            android:id="@+id/course_describe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/course_title"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/course_Img"
+            android:ellipsize="end"
+            android:lines="2"
+            android:text="@{courseBean.shortBrief}"
+            android:textColor="@color/gray_8"
+            android:textSize="12sp"
+            tools:text="描述" />
+
+        <TextView
+            android:id="@+id/course_lecturer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/course_purchased_num"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="16dp"
+            android:layout_toRightOf="@+id/course_Img"
+            android:drawablePadding="4dp"
+            android:drawableRight="@mipmap/ic_arrow_to_right"
+            android:ellipsize="end"
+            android:textColor="@color/app_main_color"
+            android:lines="1"
+            android:text="@{courseBean.authorInfo.name}"
+            android:textSize="12sp"
+            tools:text="讲师" />
+
+        <TextView
+            android:id="@+id/course_purchased_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/course_Img"
+            android:layout_toRightOf="@+id/course_Img"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@{String.valueOf(courseBean.saleCount)+' '}"
+            android:textColor="@color/app_main_color"
+            android:textSize="12sp"
+            tools:text="123" />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/course_Img"
+            android:layout_toRightOf="@+id/course_purchased_num"
+            android:lines="1"
+            android:text="@string/purchase"
+            android:textSize="12sp"
+            tools:text="购买人数" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/gray_f2" />
+
+    </RelativeLayout>
+</layout>

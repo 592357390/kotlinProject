@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_main_color"
+    android:orientation="vertical"
+    tools:context=".Activity.LoginActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="133dp"
+        android:src="@mipmap/ic_login_top" />
+
+    <TextView
+        android:id="@+id/facebook_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="188dp"
+        android:background="@drawable/select_bg_login_btn"
+        android:gravity="center"
+        android:text="@string/log_in_with_facebook"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/google_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/select_bg_login_btn"
+        android:gravity="center"
+        android:text="@string/log_in_with_google"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/see_anywhere"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="@string/see_without_login"
+        android:textColor="@color/white"
+        android:textSize="13sp" />
+
+</LinearLayout>

@@ -1,0 +1,345 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:visibility="gone"
+            android:id="@+id/login_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/gray_f2">
+
+            <ImageView
+                android:id="@+id/my_top_Im"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/bg_myinfo_top" />
+
+
+            <LinearLayout
+                android:id="@+id/learn_record_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/my_top_Im"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="16dp">
+
+                <TextView
+                    android:id="@+id/userName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:gravity="center"
+                    android:text="name"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp">
+
+                    <TextView
+                        android:id="@+id/learn_time_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="time"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/learn_day_tv"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="day"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/study_time"
+                        android:textColor="@color/gray_8"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="@string/continue_study"
+                        android:textColor="@color/gray_8"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/my_ava_Iv"
+                android:layout_width="74dp"
+                android:layout_height="74dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="104dp"
+                android:src="@mipmap/ic_normal_ava" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/learn_record_layout"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/gray_f2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/select_white_gray"
+                    android:clickable="true"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/my_residue_money"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:clickable="true"
+                        android:drawableLeft="@mipmap/ic_gold_gray"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="16dp"
+                        android:text="@string/residue_money"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/balance"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:text="100"
+                        android:textColor="@color/app_main_color"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/charge"
+                        android:layout_width="85dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/select_main_color_btn_with_corner"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:text="@string/charge_money"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray_f2" />
+
+                <TextView
+                    android:id="@+id/my_clear_cache"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/select_white_gray"
+                    android:clickable="true"
+                    android:drawableLeft="@mipmap/ic_clear_cache"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:text="@string/clear_cache"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray_f2" />
+
+                <TextView
+                    android:id="@+id/my_feedback"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/select_white_gray"
+                    android:clickable="true"
+                    android:drawableLeft="@mipmap/ic_feedback"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:text="@string/feedback"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1px"
+                    android:background="@color/gray_f2" />
+
+                <RelativeLayout
+                    android:id="@+id/my_version_check_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/select_white_gray">
+
+                    <TextView
+                        android:id="@+id/my_version_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="16dp"
+                        android:drawableLeft="@mipmap/ic_version_check"
+                        android:drawablePadding="8dp"
+                        android:gravity="center_vertical"
+                        android:text="@string/version_check"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/newVersionTips"
+                        android:layout_width="40dp"
+                        android:layout_height="14dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="16dp"
+                        android:layout_toRightOf="@+id/my_version_check"
+                        android:background="@drawable/bg_new_version"
+                        android:gravity="center"
+                        android:text="@string/newVersion"
+                        android:textColor="@color/red"
+                        android:textSize="10sp" />
+                </RelativeLayout>
+
+
+                <TextView
+                    android:id="@+id/my_share"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/select_white_gray"
+                    android:clickable="true"
+                    android:drawableLeft="@mipmap/ic_my_share"
+                    android:drawablePadding="8dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="16dp"
+                    android:text="@string/recommendApp"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:background="@color/gray_f2" />
+
+                <TextView
+                    android:id="@+id/login_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/select_white_gray"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/login_out"
+                    android:textColor="@color/red"
+                    android:textSize="14sp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/unLogin_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible">
+
+
+        <ImageView
+            android:id="@+id/my_info_un_login_top"
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/bg_myinfo_top" />
+
+        <LinearLayout
+            android:id="@+id/unLogin"
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/my_info_un_login_top"
+            android:background="@color/white"
+            android:gravity="center_horizontal">
+
+            <TextView
+                android:id="@+id/go_login"
+                android:layout_width="85dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="45dp"
+                android:background="@drawable/select_main_color_btn_with_corner"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/my_ava_Iv_un_login"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="103dp"
+            android:src="@mipmap/ic_normal_ava" />
+
+
+        <TextView
+            android:id="@+id/my_un_login_clear_cache"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@+id/unLogin"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/select_white_gray"
+            android:clickable="true"
+            android:drawableLeft="@mipmap/ic_clear_cache"
+            android:drawablePadding="8dp"
+            android:gravity="center_vertical"
+            android:paddingLeft="16dp"
+            android:text="@string/clear_cache"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+    </RelativeLayout>
+
+
+</FrameLayout>

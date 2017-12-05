@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.handarui.acquire.server.api.bean.LessonInfoBean" />
+
+        <variable
+            name="lessonBean"
+            type="LessonInfoBean" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="2dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp">
+
+        <LinearLayout
+            android:id="@+id/recommend_lesson_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/select_white_gray"
+            android:orientation="horizontal"
+            android:paddingBottom="12dp"
+            android:paddingTop="12dp">
+
+            <ImageView
+                android:id="@+id/lesson_Img"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="16dp"
+                android:gravity="center_vertical" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lesson_name_Tv"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:ellipsize="end"
+                        android:gravity="center_vertical"
+                        android:lines="1"
+                        android:text="@{lessonBean.audioName}"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        tools:text="音频名称" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="6dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/lesson_free_Im"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="12dp"
+                        android:background="@drawable/bg_main_color_cornor_button"
+                        android:gravity="center"
+                        android:text="@string/free"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/lesson_clickNum_Tv"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:drawableLeft="@mipmap/ic_item_play_num"
+                        android:drawablePadding="4dp"
+                        android:gravity="left"
+                        android:lines="1"
+                        android:textColor="@color/gray_8"
+                        android:textSize="10sp"
+                        app:clickNum="@{lessonBean.clickCount}"
+                        tools:text="点击数" />
+
+                    <TextView
+                        android:id="@+id/lesson_duration_Tv"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="4dp"
+                        android:drawableLeft="@mipmap/ic_item_play_time"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:textColor="@color/gray_8"
+                        android:textSize="10sp"
+                        app:lessonTime="@{lessonBean.audioDuration}"
+                        tools:text="时间" />
+
+                    <TextView
+                        android:id="@+id/lesson_playedTime_Tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="8dp"
+                        android:drawableLeft="@mipmap/ic_played_time_pause"
+                        android:drawablePadding="4dp"
+                        android:gravity="center"
+                        android:lines="1"
+                        android:textColor="@color/app_main_color"
+                        android:textSize="10sp"
+                        android:visibility="invisible"
+                        tools:text="播放百分比" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

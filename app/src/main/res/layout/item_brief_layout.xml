@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.handarui.acquire.server.api.bean.RichTextItemBean" />
+        <import type="android.view.View"/>
+        <variable
+            name="itemBean"
+            type="RichTextItemBean" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textBrief"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:visibility="@{itemBean.Type.equals(itemBean.TYPE_PARAGRAPH)?View.VISIBLE:View.GONE}"
+            android:text="@{itemBean.content}"
+            android:layout_marginRight="16dp"
+            android:paddingTop="16dp" />
+
+        <ImageView
+            android:id="@+id/imgBrief"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:visibility="@{itemBean.Type.equals(itemBean.TYPE_IMAGE)?View.VISIBLE:View.GONE}"
+            android:paddingTop="16dp"
+            />
+
+    </LinearLayout>
+</layout>

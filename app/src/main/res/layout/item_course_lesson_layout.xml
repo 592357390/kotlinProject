@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.handarui.acquire.server.api.bean.LessonInfoBean" />
+
+        <variable
+            name="lessonBean"
+            type="LessonInfoBean" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginTop="2dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="3dp">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/courseLessonLayout"
+            android:background="@drawable/select_white_gray"
+            android:orientation="vertical">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@+id/lesson_download">
+
+                    <TextView
+                        android:id="@+id/lesson_name_Tv"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:ellipsize="end"
+                        android:lines="1"
+                        android:text="@{lessonBean.audioName}"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/free_state"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@+id/lesson_clickNum_Tv"
+                        android:layout_below="@+id/lesson_name_Tv"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/bg_main_color_cornor_button"
+                        android:gravity="center"
+                        android:text="@string/free"
+                        android:textColor="@color/white"
+                        android:textSize="10sp" />
+
+                    <TextView
+                        android:id="@+id/lesson_clickNum_Tv"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lesson_name_Tv"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toRightOf="@+id/free_state"
+                        android:drawableLeft="@mipmap/ic_item_play_num"
+                        android:drawablePadding="4dp"
+                        android:gravity="left"
+                        android:lines="1"
+                        android:text=""
+                        android:textColor="@color/gray_8"
+                        android:textSize="10sp"
+                        app:clickNum="@{lessonBean.clickCount}" />
+
+                    <TextView
+                        android:id="@+id/lesson_duration"
+                        android:layout_width="48dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lesson_name_Tv"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toRightOf="@+id/lesson_clickNum_Tv"
+                        android:drawableLeft="@mipmap/ic_item_play_time"
+                        android:drawablePadding="4dp"
+                        android:lines="1"
+                        android:textColor="@color/gray_8"
+                        android:textSize="10sp"
+                        app:lessonTime="@{lessonBean.audioDuration}" />
+
+
+                    <TextView
+                        android:id="@+id/lesson_playedTime_Tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/lesson_name_Tv"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_toRightOf="@+id/lesson_duration"
+                        android:drawableLeft="@mipmap/ic_item_play_time"
+                        android:drawablePadding="4dp"
+                        android:lines="1"
+                        android:textColor="@color/gray_8"
+                        android:textSize="10sp"
+                        android:visibility="gone" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:id="@+id/lesson_download"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:padding="16dp"
+                    android:src="@mipmap/ic_video_download" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

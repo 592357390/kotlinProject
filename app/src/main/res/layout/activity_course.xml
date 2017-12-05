@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+
+    <data>
+
+        <import type="com.handarui.acquire.server.api.bean.CourseBean" />
+
+        <import type="android.view.View" />
+        <import type="com.example.kotlin.R" />
+
+        <import type="com.example.kotlin.MyApplication" />
+
+        <variable
+            name="courseBean"
+            type="CourseBean" />
+
+        <variable
+            name="myApp"
+            type="com.example.kotlin.MyApplication" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/activity_course_detail"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+       >
+
+        <LinearLayout
+            android:id="@+id/course_back_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_main_color"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/back_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:src="@mipmap/ic_back_arrow" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/course_detail"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/shareBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:src="@mipmap/ic_share" />
+
+        </LinearLayout>
+
+        <include
+            android:id="@+id/course_detail_top"
+            layout="@layout/item_course_detail_top"
+            android:layout_width="match_parent"
+            android:layout_height="142dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/course_back_layout" />
+
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/course_detail_Tab"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/course_detail_top"
+            android:background="@color/white"
+            app:tabSelectedTextColor="@color/app_main_color"
+            app:tabTextColor="@color/gray_8" />
+
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:layout_below="@+id/course_detail_Tab"
+            android:background="@color/gray_f2" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/line"
+            android:layout_marginBottom="50dp"
+            android:background="@color/gray_f2">
+
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/course_detail_Vp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white" />
+
+        </FrameLayout>
+
+
+        <include
+            android:id="@+id/playControl"
+            layout="@layout/layout_play_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buy_album_btn" />
+
+        <TextView
+            android:id="@+id/buy_album_btn"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/select_main_color_btn_without_corner"
+            android:gravity="center"
+            android:text="@{courseBean.price+' '+@string/points}"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:visibility="@{courseBean.isPurchased?View.GONE:View.VISIBLE}" />
+
+    </RelativeLayout>
+</layout>

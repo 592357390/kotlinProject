@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.handarui.acquire.server.api.bean.CourseBean" />
+
+        <import type="com.example.kotlin.MyApplication" />
+
+        <import type="com.example.kotlin.R" />
+
+
+        <variable
+            name="courseBean"
+            type="com.handarui.acquire.server.api.bean.CourseBean" />
+
+        <variable
+            name="myApp"
+            type="MyApplication" />
+
+    </data>
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp">
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/recommend_course_layout"
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:background="@drawable/select_white_gray">
+            <!-- 推荐位的布局 -->
+
+            <ImageView
+                android:id="@+id/course_Img"
+                android:layout_width="70dp"
+                android:layout_height="100dp"
+                android:layout_margin="16dp"
+                app:load_image="@{courseBean.coverPicture}"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/course_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="34dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/course_Img"
+                android:layout_toRightOf="@+id/course_Img"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="@{courseBean.name}"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                tools:text="课程标题" />
+
+            <TextView
+                android:id="@+id/course_describe"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/course_title"
+                android:layout_marginRight="34dp"
+                android:layout_marginTop="3dp"
+                android:layout_toRightOf="@+id/course_Img"
+                android:ellipsize="end"
+                android:lines="2"
+                android:text="@{courseBean.shortBrief}"
+                android:textColor="@color/gray_8"
+                android:textSize="12sp"
+                tools:text="课程简介" />
+
+            <TextView
+                android:id="@+id/course_lecturer"
+                android:layout_width="270dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/course_purchased_num"
+                android:layout_marginBottom="4dp"
+                android:layout_marginRight="34dp"
+                android:layout_marginTop="14dp"
+                android:layout_toRightOf="@+id/course_Img"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{courseBean.authorInfo.name+' '+courseBean.authorInfo.title}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                tools:text="讲师信息" />
+
+
+            <TextView
+                android:id="@+id/course_purchased_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/course_Img"
+                android:layout_toRightOf="@+id/course_Img"
+                android:ellipsize="end"
+                android:lines="1"
+                android:text="@{String.valueOf(courseBean.saleCount)}"
+                android:textColor="@color/app_main_color"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_alignBottom="@id/course_Img"
+                android:layout_toRightOf="@+id/course_purchased_num"
+                android:text="@string/purchase"
+                android:textColor="@color/gray_8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/course_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/course_Img"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="16dp"
+                android:layout_toRightOf="@+id/course_purchased_num"
+                android:drawablePadding="6dp"
+                android:drawableRight="@mipmap/ic_gold_small"
+                android:gravity="right"
+                android:lines="1"
+                android:text="@{courseBean.getIsPurchased()?myApp.getString(R.string.alreadyOwn):String.valueOf(courseBean.getPrice())}"
+                android:textColor="@color/app_main_color"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

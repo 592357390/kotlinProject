@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#65c7b0</color>
+    <color name="colorPrimaryDark">#65c7b0</color>
+    <color name="colorAccent">#65c7b0</color>
+    <color name="white">#ffffff</color>
+    <color name="gray_press">#dddddd</color>
+    <color name="black">#000000</color>
+    <color name="gray_8">#888888</color>
+    <color name="gray_b">#bbbbbb</color>
+    <color name="app_main_color">#65c7b0</color>
+    <color name="gray_f2">#f2f2f2</color>
+    <color name="app_main_press_color">#305960</color>
+    <color name="red">#d0021b</color>
+    <color name="alphaWhite">#f5ffffff</color>
+</resources>

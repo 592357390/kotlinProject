@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="facebook_app_id">130698024261743</string>
+    <string name="fb_login_protocol_scheme">fb130698024261743</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="alreadyOwn">已购</string>
+    <string name="purchase">purchase</string>
+    <string name="free">free</string>
+    <string name="recommond_courses">推荐课程</string>
+    <string name="more">More</string>
+    <string name="audition_lesson">试听音频</string>
+    <string name="k">k</string>
+    <string name="m">m</string>
+    <string name="study_time">学习时间</string>
+    <string name="continue_study">学习天数</string>
+    <string name="feedback">FeedBack</string>
+    <string name="clear_cache">Clear cache</string>
+    <string name="residue_money">余额</string>
+    <string name="charge_money">充值</string>
+    <string name="newVersion">NEW</string>
+    <string name="version_check">Version check</string>
+    <string name="recommendApp">Recommend App</string>
+    <string name="login_out">Log out</string>
+    <string name="login">login</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="log_in_with_facebook">Log in with Facebook</string>
+    <string name="log_in_with_google">Log in with Google</string>
+    <string name="see_without_login">随便看看</string>
+    <string name="send">send</string>
+    <string name="feedback_hint_tips">Please tell us your opinion of our product......</string>
+    <string name="feedback_phone_hint_tips">Please leave your contact information</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="course_detail">Course Detail</string>
+    <string name="contents">CONTENTS</string>
+    <string name="brief">brief</string>
+    <string name="downloadInBatches">Download All</string>
+    <string name="points"> points</string>
+    <string name="play">播放</string>
+    <string name="course">course</string>
+    <string name="transcript">transcript</string>
+    <string name="download">download</string>
+    <string name="share">share</string>
+</resources>
