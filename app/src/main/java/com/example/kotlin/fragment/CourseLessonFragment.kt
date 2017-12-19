@@ -21,7 +21,7 @@ class CourseLessonFragment : BaseFragment() {
 
     override fun initView(view: View) {
         view.lesson_Rv.layoutManager = LinearLayoutManager(context)
-        lessonAdapter = LessonAdapter(context)
+        lessonAdapter = LessonAdapter(context!!)
         view.lesson_Rv.adapter = lessonAdapter
         view.download_lesson_Tv.setOnClickListener({
             lessonAdapter.dataSource

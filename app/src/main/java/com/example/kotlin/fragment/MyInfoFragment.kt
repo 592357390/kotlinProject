@@ -26,8 +26,8 @@ class MyInfoFragment : BaseFragment() {
             view.login_layout.visibility = View.GONE
             view.unLogin_layout.visibility = View.VISIBLE
         }
-        view.go_login.setOnClickListener({ LoginActivity().startSelf(context) })
-        view.my_feedback.setOnClickListener({ FeedBackActivity().startSelf(context) })
+        view.go_login.setOnClickListener({ LoginActivity().startSelf(context!!) })
+        view.my_feedback.setOnClickListener({ FeedBackActivity().startSelf(context!!) })
     }
 
 }

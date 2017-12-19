@@ -23,7 +23,7 @@ class PurchasedFragment : BaseFragment() {
 
         view.purchasedRv.setHasFixedSize(true)
 
-        adapter = CourseAdapter(context)
+        adapter = CourseAdapter(context!!)
 
         view.purchasedRv.adapter = adapter
 

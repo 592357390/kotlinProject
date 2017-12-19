@@ -18,7 +18,7 @@ class BriefFragment : BaseFragment() {
 
     override fun initView(view: View) {
         view.briefRv.layoutManager = LinearLayoutManager(context)
-        briefAdapter = BriefAdapter(context)
+        briefAdapter = BriefAdapter(context!!)
         view.briefRv.adapter = briefAdapter
 
         val arguments = arguments

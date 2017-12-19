@@ -23,7 +23,7 @@ class RecommendFragment : BaseFragment() {
      var recommendAdapter: RecommendAdapter?=null
     override fun initView(view: View) {
         view.recommendRv.layoutManager = LinearLayoutManager(context)
-        recommendAdapter = RecommendAdapter(context)
+        recommendAdapter = RecommendAdapter(context!!)
         view.recommendRv.adapter = recommendAdapter
 
         RecommendViewModel.adapter = recommendAdapter

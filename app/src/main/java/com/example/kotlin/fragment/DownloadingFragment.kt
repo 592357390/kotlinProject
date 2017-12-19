@@ -20,7 +20,7 @@ import java.util.*
  */
 class DownloadingFragment : BaseFragment() {
     override fun initView(view: View) {
-        lessonAdapter = LessonAdapter(context)
+        lessonAdapter = LessonAdapter(context!!)
         view.downloadingRv.setHasFixedSize(true)
         view.downloadingRv.layoutManager = LinearLayoutManager(context)
         view.downloadingRv.adapter = lessonAdapter

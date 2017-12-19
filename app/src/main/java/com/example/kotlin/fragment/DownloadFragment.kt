@@ -16,7 +16,7 @@ class DownloadFragment : BaseFragment() {
         downloading = DownloadingFragment()
         downloaded = DownloadedFragment()
 
-        var baseFragmentAdapter = BaseFragmentAdapter(activity.supportFragmentManager, arrayListOf(downloading, downloaded))
+        var baseFragmentAdapter = BaseFragmentAdapter(activity!!.supportFragmentManager, arrayListOf(downloading, downloaded))
         baseFragmentAdapter.titles = arrayListOf("下载中", "已下载")
 
         view.downloadPager.adapter = baseFragmentAdapter

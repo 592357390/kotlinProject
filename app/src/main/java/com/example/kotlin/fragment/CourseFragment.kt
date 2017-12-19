@@ -20,7 +20,7 @@ class CourseFragment : BaseFragment() {
         view.lesson_top_layout.visibility=View.GONE
 
         view.lesson_Rv.layoutManager = LinearLayoutManager(context)
-        courseAdapter = CourseAdapter(context)
+        courseAdapter = CourseAdapter(context!!)
         view.lesson_Rv.adapter = courseAdapter
     }
 
